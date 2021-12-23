@@ -1,0 +1,519 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 
+==============================================
+CONTENT:	Project Name Here
+AUTHOR:		Your Name Here
+==============================================
+
+TABLE OF CONTENTS:
+
+0. Reset
+1. Main Layout
+2. Content
+
+==============================================
+*/
+/* 0. Reset ================================= */
+/* 
+If you want to add partials, use Sass Modules via @use:
+@use 'variables';
+
+Usage: partial-name.variable/mixin/function-name:
+background: variables.$primary-color;
+*/
+/* 1. Main Layout ================================= */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: url(../img/Coding-Challenge-Image.png);
+	font-family: 'Libre Baskerville', serif;
+	background-size: cover;
+	display: grid;
+	grid-template-columns: repeat(15, 1fr);
+	grid-template-rows: repeat(4, 1fr);
+	height: 100vh;
+	overflow: hidden;
+}
+
+/* 2. Content ================================= */
+.bar_color {
+	background: #752203;
+}
+
+.bar_color {
+	height: 100%;
+	z-index: -1;
+	grid-area: 1/1/5/4;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	grid-area: 2/2/4/8;
+	justify-content: end;
+}
+main h1 {
+	color: #fff;
+	text-transform: capitalize;
+	font-size: 13em;
+}
+main .articleBtn {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	background: none;
+	border-radius: 100%;
+	border: none;
+	position: absolute;
+	margin-bottom: -42px;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	z-index: 1;
+}
+main .articleDiv {
+	-webkit-transform-origin: bottom left;
+	        transform-origin: bottom left;
+	height: 0%;
+}
+main .articleDiv .articleHead {
+	opacity: 0%;
+}
+main .articleDiv .bar_article {
+	opacity: 0%;
+}
+main .articleDiv .article_content {
+	opacity: 0%;
+}
+main .ctaLink {
+	background: linear-gradient(to right, #752203, #834f3c, #ac7763);
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #fff;
+	padding: 10px 5%;
+	margin-top: auto;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	opacity: 0%;
+}
+main #inactive {
+	margin-left: 50px;
+}
+main #active {
+	display: none;
+}
+main #closed {
+	-webkit-animation: articleClose 1.3s linear;
+	        animation: articleClose 1.3s linear;
+	overflow: hidden;
+}
+main #closed .articleHead {
+	opacity: 0%;
+}
+main #closed .bar_article {
+	opacity: 0%;
+}
+main #closed .article_content {
+	opacity: 0%;
+}
+main #opened {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	height: 100%;
+	padding: 13px 5%;
+}
+main #opened .articleHead {
+	opacity: 0%;
+	justify-content: space-between;
+	display: flex;
+}
+main #opened .articleHead button {
+	width: 50px;
+	background: none;
+	border: none;
+	padding: 0%;
+	cursor: pointer;
+}
+main #opened .articleHead button div {
+	height: 5px;
+	background: #752203;
+	-webkit-transform-origin: center;
+	        transform-origin: center;
+	border-radius: 5px;
+}
+main #opened .articleHead button .xBtn_L {
+	-webkit-transform: rotateZ(45deg);
+	        transform: rotateZ(45deg);
+}
+main #opened .articleHead button .xBtn_R {
+	-webkit-transform: rotateZ(-45deg);
+	        transform: rotateZ(-45deg);
+}
+main #opened .bar_article {
+	opacity: 0%;
+}
+main #opened .article_content {
+	opacity: 0%;
+	line-height: 1.3em;
+}
+main .articleDiv {
+	background: #fff;
+}
+main .articleDiv h2 {
+	text-transform: capitalize;
+	font-size: 4.2em;
+	color: #752203;
+}
+main .articleDiv .bar_article {
+	height: 5px;
+	margin: 10px 0%;
+	background: linear-gradient(to right, #752203, #752203, rgba(255, 255, 255, 0.534), rgba(255, 255, 255, 0));
+}
+
+#low {
+	grid-area: 2/2/4/8;
+	justify-content: end;
+}
+#low .mainHead {
+	-webkit-animation: CloseDelay 1.3s linear 0s;
+	        animation: CloseDelay 1.3s linear 0s;
+	opacity: 100%;
+	transition: opacity 1.3s linear 1.3s;
+}
+#low .articleDiv .articleHead {
+	-webkit-animation: fadeOut 1.3s linear;
+	        animation: fadeOut 1.3s linear;
+}
+#low .articleDiv .bar_article {
+	-webkit-animation: fadeOut 1.3s linear;
+	        animation: fadeOut 1.3s linear;
+}
+#low .articleDiv .article_content {
+	-webkit-animation: fadeOut 1.3s linear;
+	        animation: fadeOut 1.3s linear;
+}
+#low .articleDiv .ctaLink {
+	-webkit-animation: fadeOut 1.3s linear;
+	        animation: fadeOut 1.3s linear;
+}
+
+#high {
+	grid-area: 1/2/5/8;
+	justify-content: center;
+	margin: 100px 0%;
+}
+#high .mainHead {
+	opacity: 0%;
+	transition: opacity 1.3s linear;
+	position: absolute;
+}
+#high .articleDiv {
+	-webkit-animation: articleOpen 1.3s ease-in-out;
+	        animation: articleOpen 1.3s ease-in-out;
+}
+
+nav {
+	grid-area: 4/15/5/16;
+}
+
+@-webkit-keyframes articleOpen {
+	0% {
+		-webkit-transform: scaleY(0);
+		        transform: scaleY(0);
+		border-radius: 500px;
+	}
+	20% {
+		border-radius: 250px;
+	}
+	40% {
+		border-radius: 300px;
+	}
+	60% {
+		border-radius: 100px;
+	}
+	80% {
+		border-radius: 150px;
+	}
+	100% {
+		border-radius: 10px;
+	}
+}
+
+@keyframes articleOpen {
+	0% {
+		-webkit-transform: scaleY(0);
+		        transform: scaleY(0);
+		border-radius: 500px;
+	}
+	20% {
+		border-radius: 250px;
+	}
+	40% {
+		border-radius: 300px;
+	}
+	60% {
+		border-radius: 100px;
+	}
+	80% {
+		border-radius: 150px;
+	}
+	100% {
+		border-radius: 10px;
+	}
+}
+@-webkit-keyframes articleClose {
+	0% {
+		height: 100%;
+		transition: height 4.2s linear;
+		border-radius: 0px;
+	}
+	30% {
+		height: 50%;
+		width: 75%;
+		transition: height 4.2s linear;
+		border-radius: 250px;
+	}
+	60% {
+		height: 25%;
+		width: 25%;
+		transition: width 4.2s linear;
+		transition: height 4.2s linear;
+		border-radius: 360px;
+		margin-left: 35px;
+	}
+	100% {
+		height: 0%;
+		width: 0%;
+		transition: width 4.2s linear;
+		transition: height 4.2s linear;
+		border-radius: 500px;
+		margin-left: 70px;
+		margin-top: 20px;
+	}
+}
+@keyframes articleClose {
+	0% {
+		height: 100%;
+		transition: height 4.2s linear;
+		border-radius: 0px;
+	}
+	30% {
+		height: 50%;
+		width: 75%;
+		transition: height 4.2s linear;
+		border-radius: 250px;
+	}
+	60% {
+		height: 25%;
+		width: 25%;
+		transition: width 4.2s linear;
+		transition: height 4.2s linear;
+		border-radius: 360px;
+		margin-left: 35px;
+	}
+	100% {
+		height: 0%;
+		width: 0%;
+		transition: width 4.2s linear;
+		transition: height 4.2s linear;
+		border-radius: 500px;
+		margin-left: 70px;
+		margin-top: 20px;
+	}
+}
+@-webkit-keyframes fadeOut {
+	0% {
+		opacity: 100%;
+	}
+	50% {
+		opacity: 50%;
+	}
+	100% {
+		opacity: 0%;
+	}
+}
+@keyframes fadeOut {
+	0% {
+		opacity: 100%;
+	}
+	50% {
+		opacity: 50%;
+	}
+	100% {
+		opacity: 0%;
+	}
+}
+@-webkit-keyframes closeDelay {
+	0% {
+		position: absolute;
+	}
+	100% {
+		position: unset;
+	}
+}
+@keyframes closeDelay {
+	0% {
+		position: absolute;
+	}
+	100% {
+		position: unset;
+	}
+}
+@-webkit-keyframes btnDelay {
+	0% {
+		display: none;
+	}
+	100% {
+		display: flex;
+	}
+}
+@keyframes btnDelay {
+	0% {
+		display: none;
+	}
+	100% {
+		display: flex;
+	}
+}
+body{
+	overflow: hidden;
+}
+/*# sourceMappingURL=main.css.map */
